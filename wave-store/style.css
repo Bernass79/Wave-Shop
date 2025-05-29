@@ -1,0 +1,197 @@
+/* Combinando os estilos dos produtos com o estilo principal */
+@import url('product-styles.css');
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Fundo principal escuro */
+    color: #E0E0E0; /* Texto principal claro */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+a {
+    color: #7289DA; /* Cor de acento (Discord) para links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #5865F2;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #DC143C; /* Vermelho para títulos de seção */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1F1F1F; /* Um pouco mais claro que o body */
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store-name {
+    font-size: 2em;
+    font-weight: 700;
+    color: #FFFFFF; /* Branco para destaque */
+}
+
+.discord-icon {
+    font-size: 2em;
+    color: #7289DA; /* Cor do Discord */
+}
+
+.discord-icon:hover {
+    color: #5865F2;
+}
+
+/* Seção Hero */
+.hero {
+    background-color: #181818; /* Levemente diferente do body */
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero h2 {
+    font-size: 2.2em;
+    color: #FFFFFF; /* Título principal em branco */
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1em;
+    color: #A0A0A0; /* Cinza médio para descrição */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Seção de Produtos */
+.products {
+    padding: 50px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo */
+    gap: 30px;
+}
+
+/* Estilos para os cards de produtos estão em product-styles.css */
+
+/* Seção de Vídeo */
+.video-section {
+    background-color: #181818;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #000; /* Fundo enquanto o vídeo carrega */
+    border: 1px solid #333;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container p { /* Estilo para o placeholder do vídeo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #A0A0A0;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1F1F1F;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    color: #A0A0A0;
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .store-name {
+        font-size: 1.5em;
+    }
+
+    .discord-icon {
+        font-size: 1.5em;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.6em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+}
